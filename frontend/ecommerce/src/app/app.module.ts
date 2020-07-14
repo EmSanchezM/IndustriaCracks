@@ -3,14 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
-import { LoginComponent } from './login/login.component';
-import { PerfilComponent } from './perfil/perfil.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
-import { ComprasComponent } from './compras/compras.component';
+import { ComprasComponent } from './pages/compras/compras.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { RegisterComponent } from './components/auth/register/register.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { environment } from '../environments/environment';
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    PerfilComponent
+    PerfilComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginComponent } from './login/login.component';
-import { PerfilComponent } from './perfil/perfil.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
-import { NavbarComponent } from './navbar/navbar.component';
-import { ComprasComponent } from './compras/compras.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { ComprasComponent } from './pages/compras/compras.component';
 
 
 const routes: Routes = [
