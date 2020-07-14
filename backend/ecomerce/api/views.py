@@ -79,6 +79,7 @@ def registro_view(request):
 def logout_view(request):
     data = {}
     logout(request)
+    
     data['response'] = 'Cierre de sesion satisfactoria'
 
     return Response(data)
