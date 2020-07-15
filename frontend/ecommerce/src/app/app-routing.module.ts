@@ -5,7 +5,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 
-/*import { NavbarComponent } from './components/shared/navbar/navbar.component';*/
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ComprasComponent } from './pages/compras/compras.component';
 
 
