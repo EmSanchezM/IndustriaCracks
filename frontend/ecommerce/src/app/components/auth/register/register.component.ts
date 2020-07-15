@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
                     .subscribe(
                       response => {
                         console.log(response);
-                        if(response.user){
+                        if(response.token){
                           this.registerUser = response.user;
                           this.status = 'Registro exitoso';
                           console.log(this.status);
