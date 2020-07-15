@@ -33,9 +33,8 @@ AUTH_USER_MODEL = 'api.Account'
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:4200'
+'https://localhost:4200',
 )
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
