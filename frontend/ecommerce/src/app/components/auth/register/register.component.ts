@@ -30,15 +30,14 @@ export class RegisterComponent implements OnInit {
                       response => {
                         console.log(response);
                         if(response.token){
-                          this.registerUser = response.user;
+                          this.registerUser = response.response;
                           this.status = 'Registro exitoso';
                           console.log(this.status);
                           registerForm.reset();
-                          //this.router.navigate(['/login']);
+                          this.router.navigate(['/login']);
                         }else{
                           this.status = 'Fallo el registro';
                           console.log(this.status);
-
                         }
                       },
                       error =>{console.log(<any>error);}
