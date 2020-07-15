@@ -13,7 +13,7 @@ export class UserService {
   public URL:string; 
 
   constructor(private http: HttpClient) {
-    this.URL = 'https://localhost:8000/api/auth/';
+    this.URL = 'http://localhost:8000/api/auth/';
   }
 
   RegisterUser(user: User): Observable<any>{
