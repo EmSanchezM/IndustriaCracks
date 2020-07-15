@@ -1,0 +1,22 @@
+.modal.show{
+    display:block;
+}
+
+.botones,.nav-link {
+    background-color:#f05837;
+    color: #fff;
+    border-color: #970505;
+}
+
+.botones:hover {
+    background-color: #f23c18; /* Green */
+    color: white;
+  }
+
+.fondo{
+    background-color:#f05837;
+}
+
+.texto{
+    color:#f05837;
+}

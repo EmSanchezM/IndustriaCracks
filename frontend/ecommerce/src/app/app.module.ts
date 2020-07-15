@@ -13,6 +13,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { UpdateComponent } from './products/update/update.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     LoginComponent,
     PerfilComponent,
-    RegisterComponent
+    RegisterComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
