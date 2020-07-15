@@ -1,1 +1,66 @@
-<p>register works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col text-left">
+            <h2>Registro</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <form action="" #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)">
+                        <div class="form-group row">
+                            <label for="first_name" class="col-sm-2 col-form-label">Nombre</label>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Nombre" name="first_name" #first_name="ngModel" [(ngModel)]="user.first_name"  class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="last_name" class="col-sm-2 col-form-label">Apellido</label>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Apellido" name="last_name" #last_name="ngModel" [(ngModel)]="user.last_name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="phone_number" class="col-sm-2 col-form-label">Telefono</label>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Telefono" name="phone_number" #phone_number="ngModel" [(ngModel)]="user.phone_number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="birth_date" class="col-sm-2 col-form-label">Fecha de nacimiento</label>
+                            <div class="col-sm-6">
+                                <input type="date" placeholder="Fecha de Nacimiento" name="birth_date" #birth_date="ngModel" [(ngModel)]="user.birth_date"  class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-6">
+                                <input type="email" placeholder="Email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
+                            <div class="col-sm-6">
+                                <input type="password" placeholder="Contraseña" name="password" #password="ngModel" [(ngModel)]="user.password"  class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="confirm_password" class="col-sm-2 col-form-label">Repita su contraseña</label>
+                            <div class="col-sm-6">
+                                <input type="text" placeholder="Repita su contraseña" name="confirm_password" #confirm_password="ngModel" [(mgModel)]="user.confirm_password" class="form-control">
+                            </div>
+                        </div>
+                        <div class="rows">
+                            <div class="col text-left">
+                                <button type='submit' class="btn btn-primary">Registrarse</button>
+                                <button type="submit" class="btn btn-danger" routerLink='/login'>Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
