@@ -20,3 +20,19 @@
 .texto{
     color:#f05837;
 }
+
+.boton-editar{
+    color:#28A745;
+    background-color: transparent;
+    padding: 3;
+    border: none;
+    border-radius:3px;
+}
+
+.boton-editar:hover{
+    color:white;
+    background-color: #28A745;
+    padding: 3;
+    border: none;
+    border-radius:3px;
+}

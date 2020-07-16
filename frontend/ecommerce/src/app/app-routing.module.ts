@@ -9,7 +9,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ComprasComponent } from './pages/compras/compras.component';
 
 //Products
-import { UpdateComponent } from './products/update/update.component';//Modal
+import { UpdateComponent } from './pages/products/update/update.component';//Modal
+import { MyproductsComponent } from './pages/products/myproducts/myproducts.component';//Modal
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'registro', component: RegisterComponent},
   {path: 'perfil', component: PerfilComponent},
   {path: 'compras',  component: ComprasComponent },
-  {path: 'update_product',  component: UpdateComponent }
+  {path: 'update_product',  component: UpdateComponent },
+  {path: 'my_products',  component: MyproductsComponent },
 
 ];
 
