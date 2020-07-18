@@ -16,6 +16,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UpdateComponent } from './pages/products/update/update.component';
 import { MyproductsComponent } from './pages/products/myproducts/myproducts.component';
 import { DeleteComponent } from './pages/products/delete/delete.component';
+import { CreateComponent } from './pages/products/create/create.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { DeleteComponent } from './pages/products/delete/delete.component';
     RegisterComponent,
     UpdateComponent,
     MyproductsComponent,
-    DeleteComponent
+    DeleteComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
