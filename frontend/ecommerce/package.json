@@ -21,6 +21,7 @@
     "@angular/router": "~10.0.2",
     "@angular/service-worker": "~10.0.2",
     "@popperjs/core": "^2.4.4",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

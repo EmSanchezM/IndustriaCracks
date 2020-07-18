@@ -24,7 +24,7 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": [],
+            "styles": ["node_modules/font-awesome/css/font-awesome.min.css"],
             "scripts": []
           },
           "configurations": {
