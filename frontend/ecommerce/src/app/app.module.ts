@@ -15,6 +15,7 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UpdateComponent } from './pages/products/update/update.component';
 import { MyproductsComponent } from './pages/products/myproducts/myproducts.component';
+import { DeleteComponent } from './pages/products/delete/delete.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MyproductsComponent } from './pages/products/myproducts/myproducts.comp
     PerfilComponent,
     RegisterComponent,
     UpdateComponent,
-    MyproductsComponent
+    MyproductsComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
