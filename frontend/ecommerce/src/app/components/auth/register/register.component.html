@@ -2,6 +2,10 @@
 <div class="container">
     <h4>Registro <small> de Usuarios </small></h4>
     <hr>
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        <span>{{ message }} - accede a tu perfil <a  class="btn btn-outline-primary" [routerLink]="['/login']">Login</a></span>
+    </div>
+    
     <div class="row">
         <div class="col">
             <div class="card">

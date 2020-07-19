@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit {
   public user: User; 
   public registerUser: string;
   public status: string; 
+  public message: string;
 
   constructor(private fb:FormBuilder,
               private validador: ValidadoresRegisterService,
@@ -106,7 +107,8 @@ export class RegisterComponent implements OnInit {
                         response =>{
                           console.log(response);
                           if(response.token){
-                            this.status = 'success: '+ response.response;
+                            this.status = 'success';
+                            this.message = response.response;
                             this.formRegister.reset();
                           }
                         },
