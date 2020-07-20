@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import { map } from 'rxjs/operators';
 
 /*Modelo*/
-import {User} from '../../models/auth/user';
+import { User } from 'src/app/models/auth/user';
+import { AuthLogin } from 'src/app/models/auth/auth-login';
 
 @Injectable({
   providedIn: 'root'
@@ -11,16 +13,75 @@ import {User} from '../../models/auth/user';
 
 export class UserService {
   public URL:string; 
+  public headers: HttpHeaders;
+  userToken: string;
 
   constructor(private http: HttpClient) {
     this.URL = 'http://localhost:8000/api/auth/';
+    this.leerToken();
   }
 
   RegisterUser(user: User): Observable<any>{
     let params = JSON.stringify(user);
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    
+    return this.http.post(this.URL+'register', params, {headers:this.headers})
+                    .pipe(
+                      map(response =>{
+                        this.guardarToken(response['token']);
+                        return response;
+                      })
+                    );
 
-    return this.http.post(this.URL+'register', params, {headers: headers});
+  }
 
+  loginUser(authLogin: AuthLogin){
+    
+    return this.http.post(this.URL+'login', authLogin, {headers: this.headers})
+                    .pipe(
+                        map(response =>{
+                            this.guardarToken(response['token']);
+                            return response;
+                        })
+                    );
+  }
+
+  logoutUser(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('expira');
+  }
+
+  private guardarToken(token: string){
+    this.userToken = token;
+    localStorage.setItem('token', token);
+
+    let hoy = new Date();
+    hoy.setSeconds(3600);
+
+    localStorage.setItem('expira', hoy.getTime().toString());
+  }
+
+  private leerToken(){
+    if(localStorage.getItem('token')){
+      this.userToken = localStorage.getItem('token');
+    }else{
+      this.userToken = '';
+    }
+    return this.userToken;
+  }
+
+  estaAutenticado():boolean{
+    if(this.userToken.length > 2){
+      return false;
+    }
+    const expira = Number(localStorage.getItem('expira'));
+    const expiraDate = new Date();
+    expiraDate.setTime(expira);
+
+    if(expiraDate > new Date()){
+      return true;
+    }else{
+      return false;
+    }
+    
   }
 }

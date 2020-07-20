@@ -6,8 +6,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from 'src/app/models/auth/user';
 import { UserService } from 'src/app/services/auth/user.service';
 import { ValidadoresRegisterService } from 'src/app/services/auth/validadores-register.service';
-import { ConstantPool } from '@angular/compiler';
-import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-register',
@@ -25,7 +24,6 @@ export class RegisterComponent implements OnInit {
 
   constructor(private fb:FormBuilder,
               private validador: ValidadoresRegisterService,
-              private datePipe: DatePipe,
               private userService:UserService,
               private router: Router) {
     
@@ -110,6 +108,7 @@ export class RegisterComponent implements OnInit {
                             this.status = 'success';
                             this.message = response.response;
                             this.formRegister.reset();
+                            this.router.navigateByUrl('/login');
                           }
                         },
                         error =>{

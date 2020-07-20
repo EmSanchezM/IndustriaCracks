@@ -16,6 +16,7 @@ import { ComprasComponent } from './pages/compras/compras.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RegisterComponent } from './components/auth/register/register.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateComponent } from './pages/products/update/update.component';
 import { MyproductsComponent } from './pages/products/myproducts/myproducts.component';
