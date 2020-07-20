@@ -236,6 +236,7 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=255)
+    price = models.FloatField(null=True, blank=True, default=0)
     currency_id = models.ForeignKey(Currency, related_name='currency_product', on_delete=models.CASCADE)
     category_id = models.ForeignKey(Category, related_name='category_product', on_delete=models.CASCADE)
     user_id = models.ForeignKey(Account, related_name='user_owner', on_delete=models.CASCADE)
