@@ -47,6 +47,7 @@ export class UserService {
 
   logoutUser(){
     localStorage.removeItem('token');
+    localStorage.removeItem('expira');
   }
 
   private guardarToken(token: string){
