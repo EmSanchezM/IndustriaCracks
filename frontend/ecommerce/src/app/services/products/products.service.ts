@@ -4,19 +4,24 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 //Manejo de Errores
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-//Modelo
+//Modelos
 import { Product } from 'src/app/models/product/product';
+import { Category } from 'src/app/models/product/category';
+import { Currency} from 'src/app/models/product/currency';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
-  API_Url='http://127.0.0.1:8000/api/viewset/product/'
+  API_Url_Products='http://127.0.0.1:8000/api/viewset/product/'
+  API_Url_Currency='http://127.0.0.1:8000/api/viewset/currency/'
+  API_Url_Category='http://127.0.0.1:8000/api/viewset/category/'
   constructor(private http: HttpClient) { }
-
+  //Productos
   getProducts(){
-    return this.http.get<Product[]>(this.API_Url)
+    return this.http.get<Product[]>(this.API_Url_Products)
   }
 
   httpOptions = {
@@ -26,6 +31,15 @@ export class ProductsService {
   };
 
   postProduct(product){
-    return this.http.post<Product[]>(this.API_Url, JSON.stringify(product),this.httpOptions)
+    return this.http.post<Product[]>(this.API_Url_Products, JSON.stringify(product),this.httpOptions)
+  }
+
+  //Categorias
+  getCategories(){
+    return this.http.get<Category[]>(this.API_Url_Category)
+  }
+  //Moneda
+  getCurrency(){
+    return this.http.get<Product[]>(this.API_Url_Currency)
   }
 }
