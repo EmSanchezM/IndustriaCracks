@@ -40,6 +40,6 @@ export class ProductsService {
   }
   //Moneda
   getCurrency(){
-    return this.http.get<Product[]>(this.API_Url_Currency)
+    return this.http.get<Currency[]>(this.API_Url_Currency)
   }
 }

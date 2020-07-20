@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ProductsService } from 'src/app/services/products/products.service'
 import { Router } from '@angular/router';
 import { Category } from 'src/app/models/product/category';
+import { Currency } from 'src/app/models/product/currency';
  
 
 @Component({
@@ -10,9 +11,14 @@ import { Category } from 'src/app/models/product/category';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  categories:Category[];
-  @Input() productDetail =  {name:'', description:'',price:""}
   constructor(private dataService:ProductsService,public router:Router) { }
+
+  //PostProductInputForm
+  @Input() productDetail =  {name:'', description:'',price:""}
+  //Objetos
+  categories:Category[];
+  currencies:Currency[];
+  
 
   ngOnInit(){
     return this.dataService.getCategories()
