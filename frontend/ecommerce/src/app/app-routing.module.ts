@@ -7,10 +7,13 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ComprasComponent } from './pages/compras/compras.component';
+import { DetalleProductoComponent } from './pages/detalle-producto/detalle-producto.component';
 
-//Products
-import { UpdateComponent } from './pages/products/update/update.component';//Modal
-import { MyproductsComponent } from './pages/products/myproducts/myproducts.component';//Modal
+
+// Products
+import { UpdateComponent } from './pages/products/update/update.component'; // Modal
+import { MyproductsComponent } from './pages/products/myproducts/myproducts.component'; // Modal
+
 
 
 const routes: Routes = [
@@ -20,6 +23,7 @@ const routes: Routes = [
   {path: 'compras',  component: ComprasComponent },
   {path: 'update_product',  component: UpdateComponent },
   {path: 'my_products',  component: MyproductsComponent },
+  {path: 'detalle',  component: DetalleProductoComponent },
 
 ];
 

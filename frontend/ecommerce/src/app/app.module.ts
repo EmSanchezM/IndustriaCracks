@@ -1,3 +1,4 @@
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { DatePipe } from '@angular/common';
@@ -20,7 +21,7 @@ import { UpdateComponent } from './pages/products/update/update.component';
 import { MyproductsComponent } from './pages/products/myproducts/myproducts.component';
 import { DeleteComponent } from './pages/products/delete/delete.component';
 import { CreateComponent } from './pages/products/create/create.component';
-
+import { DetalleProductoComponent } from './pages/detalle-producto/detalle-producto.component';
 
 
 @NgModule({
@@ -33,11 +34,14 @@ import { CreateComponent } from './pages/products/create/create.component';
     UpdateComponent,
     MyproductsComponent,
     DeleteComponent,
-    CreateComponent
+    CreateComponent,
+    DetalleProductoComponent,
+    ComprasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
