@@ -74,7 +74,8 @@ export class UserService {
     }
     const expira = Number(localStorage.getItem('expira'));
     const expiraDate = new Date();
-    
+    expiraDate.setTime(expira);
+
     if(expiraDate > new Date()){
       return true;
     }else{

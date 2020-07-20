@@ -108,6 +108,7 @@ export class RegisterComponent implements OnInit {
                             this.status = 'success';
                             this.message = response.response;
                             this.formRegister.reset();
+                            this.router.navigateByUrl('/login');
                           }
                         },
                         error =>{
