@@ -70,7 +70,7 @@ export class UserService {
   }
 
   estaAutenticado():boolean{
-    if(this.userToken.length > 2){
+    if(this.userToken.length < 2){
       return false;
     }
     const expira = Number(localStorage.getItem('expira'));

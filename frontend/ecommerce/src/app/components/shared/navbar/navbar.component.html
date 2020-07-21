@@ -29,12 +29,12 @@
                                       <li><a href="blog-details.html">Blog Details</a></li>
                                   </ul>
                               </li>
-                              <li><a routerLink="login">Acceder</a></li>
+                              <li><a routerLink="login">Registrarse / Acceder</a></li>
                           </ul>
                       </nav>
                   </div>
                   <!-- Header Right -->
-                  <div class="main-menu div-perfil" >
+                  <div class="main-menu div-perfil" *ngIf="auth.estaAutenticado()">
 
                     <ul>
                       <li><a href="#"><img src="assets/icons/usuario.png" width="30px" alt=""></a>
