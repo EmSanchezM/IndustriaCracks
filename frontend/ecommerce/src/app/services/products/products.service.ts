@@ -34,6 +34,12 @@ export class ProductsService {
     return this.http.post<Product[]>(this.API_Url_Products, JSON.stringify(product),this.httpOptions)
   }
 
+  putProduct(id,product){
+    return this.http.put<Product[]>(this.API_Url_Products+''+id, JSON.stringify(product),this.httpOptions)
+  }
+  deleteProduct(id){
+    return this.http.delete<Product[]>(this.API_Url_Products+''+id,this.httpOptions)
+  }
   //Categorias
   getCategories(){
     return this.http.get<Category[]>(this.API_Url_Category)

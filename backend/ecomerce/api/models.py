@@ -21,6 +21,9 @@ class Image(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return str(self.img_route)
+
 class Direction(models.Model):
     direction = models.CharField(max_length=60, null=True, blank=True)
     relative = models.ForeignKey('self', on_delete=models.CASCADE, related_name="relative_direction", null=True, blank=True)
@@ -237,7 +240,6 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=255)
     price = models.FloatField(null=True, blank=True, default=0)
-    currency_id = models.ForeignKey(Currency, related_name='currency_product', on_delete=models.CASCADE)
     category_id = models.ForeignKey(Category, related_name='category_product', on_delete=models.CASCADE)
     user_id = models.ForeignKey(Account, related_name='user_owner', on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
@@ -249,6 +251,9 @@ class Product(models.Model):
 class Image_Product(models.Model):
     images_id = models.ForeignKey(Image, related_name='image_route', on_delete=models.CASCADE)
     product_id = models.ForeignKey(Product, related_name='products_images', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.images_id)+ "    " + str(self.product_id)
 
 class Status(models.Model):
     description = models.CharField(max_length=50)

@@ -7,15 +7,14 @@
       <img class="card-img" src="{{imagen_producto}}" alt="Card image">
       <div class="card-img-overlay ">
         <p class="card-title pb-0">{{product.name}} &nbsp; 
-          <app-update></app-update>
-          <app-delete></app-delete>
+          <app-update [product]="product"></app-update>
+          <app-delete [product]="product"></app-delete>
         </p>
 
       </div>
       <div class="card-body">
         <p class="m-0 pb-0">{{product.description}}</p>
         <p class="m-0 pb-0"><strong>{{product.price}} {{product.sign}} </strong> </p>
-        <p class="m-0 pb-0"><strong>ID ELemento de Prueba{{product.id}} </strong> </p>
       </div>
     </div>
     <!--EndFor-->

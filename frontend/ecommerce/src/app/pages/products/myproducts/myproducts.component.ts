@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import {Product} from 'src/app/models/product/product';
 import { ProductsService } from 'src/app/services/products/products.service'
 
@@ -16,6 +16,7 @@ export class MyproductsComponent implements OnInit {
   moneda = 'Varas'
   //Modelo
   products:Product[];
+
   
   //Llamar al servicio
   constructor(private dataService:ProductsService ) { }

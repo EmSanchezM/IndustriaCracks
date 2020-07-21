@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Product } from 'src/app/models/product/product';
+import { ProductsService } from 'src/app/services/products/products.service'
+import { Router } from '@angular/router';
+import { Category } from 'src/app/models/product/category';
 
 @Component({
   selector: 'app-delete',
@@ -6,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./delete.component.css']
 })
 export class DeleteComponent implements OnInit {
-
-  constructor() { }
-
+  @Input() product: Product
+  constructor(private dataService:ProductsService,public router:Router) { }
   ngOnInit(): void {
   }
-
+  
+  eraseproduct(id) {
+    console.log("Actualizando")
+    this.dataService.deleteProduct(id)
+      .subscribe((data: {}) => {
+        this.router.navigate(['/my_products'])
+      })
+}
 }

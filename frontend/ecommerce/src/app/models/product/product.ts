@@ -9,7 +9,6 @@ export class Product {
     public description:String,
     public price:number,
     public user:User,
-    public currency:Currency[],
     public category:Category[],
     public date_created:String,
     public date_updated:String){
